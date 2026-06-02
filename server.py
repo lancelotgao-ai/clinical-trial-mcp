@@ -492,7 +492,7 @@ async def _get_statistics(params: GetStatisticsInput) -> str:
 # --- Lifespan ---
 
 @asynccontextmanager
-async def app_lifespan():
+async def app_lifespan(app):
     """Manage browser lifecycle across the MCP server session."""
     yield {}
     try:
