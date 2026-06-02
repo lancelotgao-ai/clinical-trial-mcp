@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chinadrugtrials-mcp"
+version = "1.0.0"
+description = "MCP Server for China Drug Clinical Trial Registration Platform (chinadrugtrials.org.cn)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx",
+    "beautifulsoup4",
+    "lxml",
+    "playwright",
+    "pydantic",
+]
+
+[project.scripts]
+chinadrugtrials-mcp = "server:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["chinadrugtrials_mcp*"]

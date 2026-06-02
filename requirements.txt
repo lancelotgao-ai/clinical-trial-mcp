@@ -3,3 +3,4 @@ httpx
 beautifulsoup4
 lxml
 playwright
+pydantic
