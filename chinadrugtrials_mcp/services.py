@@ -2,6 +2,7 @@
 
 import json
 from typing import Optional
+from urllib.parse import quote
 
 from .browser_manager import browser_mgr
 from .constants import SEARCH_LIST_URL, STATISTICS_URL
@@ -38,7 +39,7 @@ class ChinadrugtrialsService:
             }
 
             page = await browser_mgr.get_page()
-            param_str = "&".join(f"{k}={v}" for k, v in query.items())
+            param_str = "&".join(f"{k}={quote(v, safe='')}" for k, v in query.items())
             await page.goto(f"{SEARCH_LIST_URL}?{param_str}", wait_until="domcontentloaded", timeout=60000)
 
             try:
@@ -78,7 +79,7 @@ class ChinadrugtrialsService:
         page = None
         try:
             page = await browser_mgr.get_page()
-            search_url = f"{SEARCH_LIST_URL}?reg_no={params.reg_no}&indication=&case_no=&drugs_name=&drugs_type=&appliers=&communities=&researchers=&agencies=&state="
+            search_url = f"{SEARCH_LIST_URL}?reg_no={quote(params.reg_no, safe='')}&indication=&case_no=&drugs_name=&drugs_type=&appliers=&communities=&researchers=&agencies=&state="
             await page.goto(search_url, wait_until="domcontentloaded", timeout=60000)
 
             try:
