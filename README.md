@@ -1,5 +1,7 @@
 # chinadrugtrials-mcp
 
+本仓库是面向公开的国家药物临床试验登记平台的通用 MCP 工具，数据来自该公开平台，不含任何私有数据或凭据。使用时请遵守来源网站的使用条款，项目以 MIT 许可发布。
+
 MCP Server for China Drug Clinical Trial Registration and Information Disclosure Platform (药物临床试验登记与信息公示平台, chinadrugtrials.org.cn).
 
 ## Overview
